@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -24,10 +25,17 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 w-full max-w-[76rem] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="text-xl font-bold tracking-[-0.04em]"
+          className="relative block h-10 w-[6.25rem]"
           onClick={closeMenu}
         >
-          drawlab<span className="text-accent">.</span>
+          <Image
+            src="/logo/drawlab_white_small.png"
+            alt="Drawlab"
+            fill
+            priority
+            sizes="100px"
+            className="object-contain"
+          />
         </Link>
 
         <button
@@ -80,4 +88,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ArrowIcon } from "@/components/arrow-icon";
+
 const services = [
   {
     number: "01",
@@ -63,25 +65,6 @@ const collaborations = [
     image: "/clients/lr.png",
   },
 ] as const;
-
-function ArrowIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      fill="none"
-      className="size-4"
-    >
-      <path
-        d="M4 10h12m-5-5 5 5-5 5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export default function HomePage() {
   return (
