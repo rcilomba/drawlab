@@ -4,15 +4,15 @@ import { PageIntro } from "@/components/page-intro";
 
 export const metadata: Metadata = {
   title: "Ydelser",
-  description: "Se Drawlabs kreative ydelser inden for illustration og design.",
+  description: "Se Drawlabs ydelser inden for arkitektur, boligdesign og 3D-visualisering.",
 };
 
 export default function ServicesPage() {
   return (
     <PageIntro
       eyebrow="Ydelser"
-      title="Kreative løsninger med et tydeligt formål."
-      description="Her præsenteres illustration, grafisk design, branding, animation og digital kunst i milstolpe 3."
+      title="Rumlige løsninger med et tydeligt formål."
+      description="Her præsenteres boligdesign, ombygning, indretning og 3D-visualisering i milstolpe 3."
     />
   );
 }

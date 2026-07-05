@@ -38,7 +38,9 @@ export function SiteHeader() {
           aria-label={isMenuOpen ? "Luk menu" : "Åbn menu"}
           onClick={() => setIsMenuOpen((current) => !current)}
         >
-          <span className="sr-only">{isMenuOpen ? "Luk menu" : "Åbn menu"}</span>
+          <span className="sr-only">
+            {isMenuOpen ? "Luk menu" : "Åbn menu"}
+          </span>
           <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
             <span
               className={`h-px w-full bg-current transition-transform ${isMenuOpen ? "translate-y-[3.5px] rotate-45" : ""}`}

@@ -7,11 +7,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Drawlab — Illustration & design",
+    default: "Drawlab — Arkitektur & 3D-visualisering",
     template: "%s | Drawlab",
   },
   description:
-    "Drawlab skaber illustration, grafisk design, branding, animation og digital kunst.",
+    "Drawlab skaber arkitektoniske løsninger, boligdesign og 3D-visualiseringer, der gør idéer tydelige.",
 };
 
 type RootLayoutProps = Readonly<{
@@ -28,4 +28,3 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
-
