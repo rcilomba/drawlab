@@ -45,6 +45,25 @@ const processSteps = [
   },
 ] as const;
 
+const collaborations = [
+  {
+    name: "Adoni Design",
+    image: "/clients/adoni-design.jpg",
+  },
+  {
+    name: "Den Serbisk Ortodokse Kirke",
+    image: "/clients/serbisk-ortodokse-kirke.jpg",
+  },
+  {
+    name: "Carlsbergbyen",
+    image: "/clients/carlsberg.png",
+  },
+  {
+    name: "Line Reenmers",
+    image: "/clients/lr.png",
+  },
+] as const;
+
 function ArrowIcon() {
   return (
     <svg
@@ -201,7 +220,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[76rem] px-5 pb-24 sm:px-8 sm:pb-32 lg:px-10">
+      <section className="border-y border-white/10 bg-white/[0.025]">
+        <div className="mx-auto w-full max-w-[76rem] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase">
+                Udvalgte samarbejder
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">
+                Skabt i godt selskab.
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-6 text-muted">
+              Et udvalg af virksomheder og organisationer, vi har skabt
+              løsninger sammen med.
+            </p>
+          </div>
+
+          <ul className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
+            {collaborations.map((collaboration) => (
+              <li
+                key={collaboration.name}
+                className="group flex flex-col items-center justify-center py-4 text-center"
+              >
+                <div className="relative size-20 overflow-hidden rounded-xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105 sm:size-24">
+                  <Image
+                    src={collaboration.image}
+                    alt={`${collaboration.name} logo`}
+                    fill
+                    sizes="96px"
+                    className="object-cover grayscale transition-[filter,opacity] duration-300 group-hover:grayscale-0"
+                  />
+                </div>
+                <p className="mt-5 text-xs leading-5 font-semibold tracking-[0.08em] text-white/55 uppercase transition-colors group-hover:text-white">
+                  {collaboration.name}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[76rem] px-5 py-24 sm:px-8 sm:py-32 lg:px-10">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface lg:grid lg:grid-cols-[1.25fr_0.75fr]">
           <div className="relative min-h-[28rem] overflow-hidden lg:min-h-[38rem]">
             <Image
@@ -333,4 +393,3 @@ export default function HomePage() {
     </>
   );
 }
-
