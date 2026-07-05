@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowIcon } from "@/components/arrow-icon";
+import { HeroVisual } from "@/components/home/hero-visual";
+import { Reveal } from "@/components/motion/reveal";
 
 const services = [
   {
@@ -72,7 +74,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="blueprint-grid absolute inset-0 opacity-35" />
         <div className="relative mx-auto grid min-h-[calc(100svh-5rem)] w-full max-w-[76rem] items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
-          <div className="relative z-10">
+          <Reveal className="relative z-10" y={20}>
             <p className="mb-6 flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase">
               <span className="h-px w-8 bg-accent-secondary" />
               Arkitektur · 3D · Indretning
@@ -106,38 +108,9 @@ export default function HomePage() {
                 Se projekter
               </Link>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative mx-auto w-full max-w-2xl lg:mx-0">
-            <div className="absolute -inset-8 rounded-full bg-accent/20 blur-3xl" />
-            <div className="relative aspect-[4/4.3] overflow-hidden rounded-[2rem] border border-white/15 bg-surface shadow-2xl shadow-black/50 sm:aspect-[4/3.6] lg:aspect-[4/4.4]">
-              <Image
-                src="/images/typehuse.jpg"
-                alt="3D-visualisering af et moderne dansk hus"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/5" />
-
-              <div className="absolute top-5 left-5 rounded-full border border-white/20 bg-black/45 px-4 py-2 text-xs font-medium backdrop-blur-md">
-                Fra skitse til beslutning
-              </div>
-
-              <div className="absolute right-5 bottom-5 left-5 flex items-end justify-between gap-4 rounded-2xl border border-white/15 bg-black/45 p-4 backdrop-blur-lg sm:p-5">
-                <div>
-                  <p className="text-xs tracking-[0.16em] text-white/60 uppercase">
-                    Visualisering
-                  </p>
-                  <p className="mt-1 text-lg font-semibold">Bolig i balance</p>
-                </div>
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-black">
-                  <ArrowIcon />
-                </span>
-              </div>
-            </div>
-          </div>
+          <HeroVisual />
         </div>
       </section>
 
@@ -158,6 +131,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-[76rem] px-5 py-24 sm:px-8 sm:py-32 lg:px-10">
+        <Reveal>
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
             <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase">
@@ -201,10 +175,11 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+        </Reveal>
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.025]">
-        <div className="mx-auto w-full max-w-[76rem] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
+        <Reveal className="mx-auto w-full max-w-[76rem] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase">
@@ -241,11 +216,11 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto w-full max-w-[76rem] px-5 py-24 sm:px-8 sm:py-32 lg:px-10">
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface lg:grid lg:grid-cols-[1.25fr_0.75fr]">
+        <Reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface lg:grid lg:grid-cols-[1.25fr_0.75fr]">
           <div className="relative min-h-[28rem] overflow-hidden lg:min-h-[38rem]">
             <Image
               src="/images/boligejer.jpg"
@@ -278,11 +253,11 @@ export default function HomePage() {
               </span>
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.025]">
-        <div className="mx-auto w-full max-w-[76rem] px-5 py-24 sm:px-8 sm:py-32 lg:px-10">
+        <Reveal className="mx-auto w-full max-w-[76rem] px-5 py-24 sm:px-8 sm:py-32 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase">
@@ -310,7 +285,7 @@ export default function HomePage() {
               ))}
             </ol>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto grid w-full max-w-[76rem] gap-12 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
@@ -352,7 +327,7 @@ export default function HomePage() {
       </section>
 
       <section className="px-5 pb-8 sm:px-8 lg:px-10">
-        <div className="relative mx-auto max-w-[76rem] overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-accent/25 via-surface to-accent-secondary/15 px-6 py-16 text-center sm:px-12 sm:py-24">
+        <Reveal className="relative mx-auto max-w-[76rem] overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-accent/25 via-surface to-accent-secondary/15 px-6 py-16 text-center sm:px-12 sm:py-24">
           <div className="blueprint-grid absolute inset-0 opacity-20" />
           <div className="relative mx-auto max-w-3xl">
             <p className="text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase">
@@ -371,7 +346,7 @@ export default function HomePage() {
               </span>
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

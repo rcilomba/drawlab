@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowIcon } from "@/components/arrow-icon";
+import { Reveal } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
   title: "Ydelser",
@@ -119,7 +120,7 @@ export default function ServicesPage() {
             id={audience.id}
             className="scroll-mt-36 border-b border-white/10 py-20 sm:py-28"
           >
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div
                 className={`relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10 bg-surface ${index % 2 === 1 ? "lg:order-2" : ""}`}
               >
@@ -169,7 +170,7 @@ export default function ServicesPage() {
                   </span>
                 </Link>
               </div>
-            </div>
+            </Reveal>
           </section>
         ))}
       </div>

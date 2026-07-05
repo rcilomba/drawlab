@@ -45,6 +45,7 @@ export function GalleryCarousel() {
   );
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const pointerStartRef = useRef<number | null>(null);
   const didSwipeRef = useRef(false);
@@ -115,6 +116,26 @@ export function GalleryCarousel() {
       if (event.key === "Escape") closeProject();
       if (event.key === "ArrowLeft") showPreviousImage();
       if (event.key === "ArrowRight") showNextImage();
+
+      if (event.key === "Tab" && dialogRef.current) {
+        const focusableElements = Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>(
+            "button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled])",
+          ),
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (!firstElement || !lastElement) return;
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
     }
 
     window.addEventListener("keydown", handleKeyDown);
@@ -170,7 +191,7 @@ export function GalleryCarousel() {
                 key={project.slug}
                 type="button"
                 tabIndex={isActive ? 0 : -1}
-                aria-hidden={!isVisible}
+                aria-hidden={!isActive}
                 aria-label={
                   isActive
                     ? `Åbn projektet ${project.title}`
@@ -279,7 +300,10 @@ export function GalleryCarousel() {
             if (event.target === event.currentTarget) closeProject();
           }}
         >
-          <div className="relative flex h-full max-h-[56rem] w-full max-w-[90rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/15 bg-[#0c0c0f] shadow-2xl">
+          <div
+            ref={dialogRef}
+            className="relative flex h-full max-h-[56rem] w-full max-w-[90rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/15 bg-[#0c0c0f] shadow-2xl"
+          >
             <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-6">
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold">

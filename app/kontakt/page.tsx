@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact-form";
+import { Reveal } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -30,7 +31,7 @@ export default function ContactPage() {
       </section>
 
       <section className="mx-auto grid w-full max-w-[76rem] gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:px-10">
-        <div>
+        <Reveal>
           <p className="text-xs font-semibold tracking-[0.18em] text-accent-secondary uppercase">
             Direkte kontakt
           </p>
@@ -71,11 +72,12 @@ export default function ContactPage() {
               KØBENHAVN / DK
             </span>
           </div>
-        </div>
+        </Reveal>
 
-        <ContactForm />
+        <Reveal delay={0.08}>
+          <ContactForm />
+        </Reveal>
       </section>
     </>
   );
 }
-

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { GalleryCarousel } from "@/components/gallery/gallery-carousel";
+import { Reveal } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
   title: "Galleri",
@@ -30,7 +31,9 @@ export default function GalleryPage() {
       </section>
 
       <section className="mx-auto w-full max-w-[76rem] px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
-        <GalleryCarousel />
+        <Reveal>
+          <GalleryCarousel />
+        </Reveal>
       </section>
     </>
   );
