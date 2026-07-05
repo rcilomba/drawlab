@@ -85,6 +85,61 @@ export function SiteFooter() {
           </div>
         </div>
 
+        <div className="grid gap-8 border-t border-white/10 py-10 md:grid-cols-2">
+          <div>
+            <div className="flex items-start gap-4">
+              <div className="mt-0.5 shrink-0 text-accent-secondary">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-6">
+                  <path
+                    d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7m-9 0h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs font-semibold tracking-[0.16em] text-white/40 uppercase">
+                  Karriere
+                </p>
+                <p className="mt-2 text-sm leading-6 text-white/65">
+                  Samarbejde eller karriere? Skriv til{" "}
+                  <a
+                    href="mailto:job@drawlab.dk"
+                    className="text-white transition-colors hover:text-accent-secondary"
+                  >
+                    job@drawlab.dk
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-start gap-4">
+              <div className="mt-0.5 shrink-0 text-accent">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-6">
+                  <path
+                    d="M20.8 5.8a5 5 0 0 0-7.1 0L12 7.5l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21l8.8-8.1a5 5 0 0 0 0-7.1Z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs font-semibold tracking-[0.16em] text-white/40 uppercase">
+                  Velgørenhed
+                </p>
+                <p className="mt-2 text-sm leading-6 text-white/65">
+                  Vi donerer 10 % af indkomsten til velgørende organisationer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Drawlab</p>
           <p>Arkitektur · Visualisering · Indretning</p>
@@ -93,4 +148,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

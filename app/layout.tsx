@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageTransition } from "@/components/motion/page-transition";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <SiteHeader />
         <PageTransition>{children}</PageTransition>
         <SiteFooter />
+        <ScrollToTop />
       </body>
     </html>
   );
